@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${PDB_URL}
+    username: ${PDB_USER}
+    password: ${PDB_PW}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todos</title>
+</head>
+<body>
+<h1>ToDos list:</h1>
+<a data-th-href="@{/todo}" href="/todo">
+    Uj teendo letrehozasa
+</a>
+
+<p data-th-if="${#lists.isEmpty(todos)}">
+    Nincsenek felvett teendok.
+</p>
+<ul data-th-unless="${#lists.isEmpty(todos)}">
+    <li data-th-each="todo: ${todos}">
+        <b><p data-th-text="${todo.description}">Todo leiras</p></b>
+        <p data-th-text="${todo.deadLine}">Todo hatarido</p>
+        <form
+                data-th-id="${todo.getId() + 'doneform'}"
+                method="post"
+                data-th-action="@{/todo-done}"
+                action="/todo-done"
+        >
+            <input type="hidden" name="todo_id" data-th-value="${todo.getId()}">
+<!--            <input type="hidden" name="done" data-th-value="${todo.isDone()}">-->
+            <label data-th-for="${todo.getId() + 'done'}">Elkészült</label>
+            <!--            <label data-th-if="${todo.isDone()}">Kész</label>-->
+            <!--            <label data-th-unless="${todo.isDone()}">Még nincs kész</label>-->
+            <input type="checkbox"
+                   name="done"
+                   data-th-checked="${todo.isDone()}"
+                   data-th-id="${todo.getId() + 'done'}"
+                   onchange="submitCheck(event)"
+            >
+        </form>
+        <form
+                method="post"
+                data-th-action="@{/todo-delete}"
+                action="/todo-delete"
+        >
+            <input type="hidden" name="todo_id" data-th-value="${todo.getId()}">
+            <input type="submit" value="Töröl">
+        </form>
+    </li>
+</ul>
+<script>
+    function submitCheck(event) {
+        event.target.parentElement.submit();
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

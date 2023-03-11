@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Uj ToDo felvitele</title>
+</head>
+<body>
+<h1>Uj ToDo</h1>
+<form
+        data-th-object="${newtodo}"
+        method="post"
+        data-th-action="@{/todo}"
+        action="/todo"
+>
+    <label for="description">Leiras</label>
+    <input id="description" type="text" data-th-field="*{description}">
+    <p
+            style="color: red;"
+            data-th-if="${#fields.hasErrors('description')}"
+            data-th-errors="*{description}"
+    ></p>
+
+    <label for="deadLine">Hatarido</label>
+    <input id="deadLine" type="date" data-th-field="*{deadLine}">
+    <p
+            style="color: red;"
+            data-th-if="${#fields.hasErrors('deadLine')}"
+            data-th-errors="*{deadLine}"
+    ></p>
+
+    <input type="submit" value="Ment">
+</form>
+</body>
+</html>
