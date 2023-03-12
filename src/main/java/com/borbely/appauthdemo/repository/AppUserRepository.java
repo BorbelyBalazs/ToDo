@@ -1,5 +1,6 @@
-package com.borbely.appauthdemo.model;
+package com.borbely.appauthdemo.repository;
 
+import com.borbely.appauthdemo.model.AppUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

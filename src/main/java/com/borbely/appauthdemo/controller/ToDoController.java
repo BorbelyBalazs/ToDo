@@ -1,14 +1,10 @@
 package com.borbely.appauthdemo.controller;
 
 import com.borbely.appauthdemo.auth.AppUserService;
+import com.borbely.appauthdemo.form.ToDoForm;
 import com.borbely.appauthdemo.model.AppUser;
 import com.borbely.appauthdemo.model.ToDo;
-import com.borbely.appauthdemo.model.ToDoRepository;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import com.borbely.appauthdemo.repository.ToDoRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

@@ -1,4 +1,4 @@
-package com.borbely.appauthdemo.controller;
+package com.borbely.appauthdemo.form;
 
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.Size;

@@ -1,5 +1,7 @@
-package com.borbely.appauthdemo.model;
+package com.borbely.appauthdemo.repository;
 
+import com.borbely.appauthdemo.model.AppUser;
+import com.borbely.appauthdemo.model.ToDo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

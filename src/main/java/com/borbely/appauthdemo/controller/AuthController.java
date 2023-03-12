@@ -1,6 +1,8 @@
 package com.borbely.appauthdemo.controller;
 
+import com.borbely.appauthdemo.form.AppUserForm;
 import com.borbely.appauthdemo.model.*;
+import com.borbely.appauthdemo.repository.AppUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -11,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -32,7 +33,7 @@ public class AuthController {
     @PostMapping("/registration")
     public String saveUser(@ModelAttribute("newuser")
                            @Validated
-                           AppUserForm appUserForm,
+                               AppUserForm appUserForm,
                            BindingResult bind) {
 
         List<AppUser> users = appUserRepository.findAll();

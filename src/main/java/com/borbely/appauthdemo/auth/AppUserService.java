@@ -1,6 +1,6 @@
 package com.borbely.appauthdemo.auth;
 
-import com.borbely.appauthdemo.model.AppUserRepository;
+import com.borbely.appauthdemo.repository.AppUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
